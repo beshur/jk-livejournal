@@ -1,0 +1,24 @@
+ {
+  "manifest_version": 2,
+  "name": "Livejournal J/K navigation (like on 9gag, twitter etc.)",
+  "description": "Enables post scrolling with keyboard, using j/k buttons.",
+  "version": "0.1",
+
+  "icons": {
+    "128": "img/icon128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [ "*://*/*" ],
+      "js": [ "content.js" ]
+    }
+  ],
+  "permissions": [
+    "http://*.livejournal.com/"
+  ],
+  "browser_action": {
+    "default_title": "Livejournal J/K navigation",
+    "default_icon": "img/icon128.png"
+  }
+}
