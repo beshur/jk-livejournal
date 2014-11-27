@@ -58,11 +58,16 @@ window.onload = function() {
 								if (i+1 == t.length) return false;
 							}
 
+							to = Math.floor(to);
+
+							console.log('-------- ', to, scrollTop);
 							if (to != scrollTop) {
 								$("html,body").stop(true, true).animate({
 									scrollTop: to
 								}, "fast");
 								return false;
+							} else {
+								console.log('-------- Iterate more');
 							}
 						}
 
