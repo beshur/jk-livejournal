@@ -22,6 +22,8 @@ window.onload = function() {
 				});
 			});
 
+			console.log(t);
+
 			$(window).on("keyup", function(e) {
 				if (e.which == 74 || e.which == 75) {
 
@@ -55,12 +57,13 @@ window.onload = function() {
 								// if forward, post is last and position on last
 								if (i+1 == t.length) return false;
 							}
-							
 
-							$("html,body").stop(true, true).animate({
-								scrollTop: to
-							}, "fast");
-							return false;
+							if (to != scrollTop) {
+								$("html,body").stop(true, true).animate({
+									scrollTop: to
+								}, "fast");
+								return false;
+							}
 						}
 
 					});
@@ -71,9 +74,11 @@ window.onload = function() {
 
 		function getTargets() {
 			var t = $(".entry-wrap, .entry-wrap img, .entry-wrap iframe, .entry-wrap .ljpoll-meta");
+			/*
 			if (is_blog) {
 				t = $("article.post, article + .pagination");
 			}
+			*/
 			return t;
 		}
 	})(jQuery);
